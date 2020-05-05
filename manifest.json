@@ -6,7 +6,7 @@
 	"icons": {
 		"128": "icon.png"
 	},
-	"version": "2.6.0",
+	"version": "2.6.1",
 	"author": "timmyRS",
 	"minimum_chrome_version": "41",
 	"permissions": [
@@ -22,9 +22,9 @@
 	"content_scripts": [
 		{
 			"matches": [
-				"https://discordapp.com/channels/*",
-				"https://ptb.discordapp.com/channels/*",
-				"https://canary.discordapp.com/channels/*"
+				"https://discord.com/channels/*",
+				"https://ptb.discord.com/channels/*",
+				"https://canary.discord.com/channels/*"
 			],
 			"js": ["discord.js"],
 			"run_at": "document_start"
