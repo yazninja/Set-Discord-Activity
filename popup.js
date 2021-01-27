@@ -36,6 +36,14 @@ document.getElementById("source").onchange=()=>{
 	{
 		document.getElementById("content-source-youtube").className="hidden"
 	}
+	if(source=="youtubemusic")
+	{
+		document.getElementById("content-source-youtube-music").className=""
+	}
+	else
+	{
+		document.getElementById("content-source-youtube-music").className="hidden"
+	}
 	if(source=="soundcloud")
 	{
 		document.getElementById("content-source-soundcloud").className=""
@@ -171,6 +179,14 @@ chrome.runtime.sendMessage({action:"ports"},response=>{
 	else
 	{
 		document.getElementById("content-source-youtube-notab").className=""
+	}
+	if(response.youtubemusic)
+	{		
+		document.getElementById("content-source-youtube-music-ok").className=""
+	}
+	else
+	{
+		document.getElementById("content-source-youtube-music-notab").className=""
 	}
 	if(response.soundcloud)
 	{

@@ -1,4 +1,4 @@
-let discordPort,youtubePort,soundcloudPort,plexPort,source="custom"
+let discordPort,youtubePort,youtubeMusicPort,soundcloudPort,plexPort,source="custom"
 const resetActivity=()=>{
 	if(discordPort!==undefined)
 	{
@@ -29,7 +29,11 @@ chrome.runtime.onConnect.addListener(port=>{
 			discordPort=undefined
 			if(source=="youtube"&&youtubePort!==undefined)
 			{
-				youtubePort.postMessage({listen:false})
+				youtubePort.postMessage({listen:false});
+			}
+			if(source=="youtubemusic"&&youtubeMusicPort!==undefined)
+			{				
+				youtubeMusicPort.postMessage({listen:false});
 			}
 		})
 		if(source=="off")
@@ -43,6 +47,10 @@ chrome.runtime.onConnect.addListener(port=>{
 		else if(source=="youtube"&&youtubePort!==undefined)
 		{
 			youtubePort.postMessage({listen:true})
+		}
+		else if(source=="youtubemusic"&&youtubeMusicPort!==undefined)
+		{
+			youtubeMusicPort.postMessage({listen:true})
 		}
 		else if(source=="soundcloud"&&soundcloudPort!==undefined)
 		{
@@ -73,6 +81,28 @@ chrome.runtime.onConnect.addListener(port=>{
 		if(source=="youtube"&&discordPort!==undefined)
 		{
 			youtubePort.postMessage({listen:true})
+		}
+	}
+	else if(port.name=="youtubemusic")
+	{
+		if(youtubeMusicPort!==undefined)
+		{
+			youtubeMusicPort.postMessage({action:"close"})
+			youtubeMusicPort.disconnect()
+		}
+		youtubeMusicPort=port
+		console.info("YouTube Music port opened")
+		port.onDisconnect.addListener(()=>{
+			console.info("YouTube Music port closed")
+			youtubeMusicPort=undefined
+			if(source=="youtubemusic")
+			{
+				resetActivity()
+			}
+		})
+		if(source=="youtubemusic"&&discordPort!==undefined)
+		{
+			youtubeMusicPort.postMessage({listen:true})
 		}
 	}
 	else if(port.name=="soundcloud")
@@ -135,6 +165,7 @@ chrome.runtime.onMessage.addListener((request,sender,sendResponse)=>{
 			sendResponse({
 				discord:discordPort!==undefined,
 				youtube:youtubePort!==undefined,
+				youtubemusic:youtubeMusicPort!==undefined,
 				soundcloud:soundcloudPort!==undefined,
 				plex:plexPort!==undefined
 			})
@@ -144,10 +175,12 @@ chrome.runtime.onMessage.addListener((request,sender,sendResponse)=>{
 			console.assert(request.source!==undefined)
 			source=request.source
 			chrome.storage.local.set({"source":source})
+
 			if(source=="off")
 			{
 				resetActivity()
 			}
+
 			if(source=="youtube")
 			{
 				if(youtubePort!==undefined)
@@ -162,7 +195,24 @@ chrome.runtime.onMessage.addListener((request,sender,sendResponse)=>{
 			else if(youtubePort!==undefined)
 			{
 				youtubePort.postMessage({listen:false})
+			}	
+
+			if(source=="youtubemusic")
+			{
+				if(youtubeMusicPort!==undefined)
+				{
+					youtubeMusicPort.postMessage({listen:true})
+				}
+				else
+				{
+					resetActivity()
+				}
 			}
+			else if(youtubeMusicPort!==undefined)
+			{
+				youtubeMusicPort.postMessage({listen:false})
+			}
+
 			if(source=="soundcloud")
 			{
 				if(soundcloudPort!==undefined)
@@ -178,6 +228,7 @@ chrome.runtime.onMessage.addListener((request,sender,sendResponse)=>{
 			{
 				soundcloudPort.postMessage({listen:false})
 			}
+
 			if(source=="plex")
 			{
 				if(plexPort!==undefined)
@@ -193,6 +244,7 @@ chrome.runtime.onMessage.addListener((request,sender,sendResponse)=>{
 			{
 				plexPort.postMessage({listen:false})
 			}
+
 			sendResponse()
 			break;
 
