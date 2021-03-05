@@ -26,11 +26,13 @@
 				"https://ptb.discord.com/channels/*",
 				"https://canary.discord.com/channels/*"
 			],
+			"all_frames": true,
 			"js": ["discord.js"],
 			"run_at": "document_start"
 		},
 		{
 			"matches": ["https://www.youtube.com/*"],
+			"all_frames": true,
 			"js": [
 				"youtube.js",
 				"content_script.js"
@@ -39,6 +41,7 @@
 		},
 		{
 			"matches": ["https://music.youtube.com/*"],
+			"all_frames": true,
 			"js": [
 				"youtubemusic.js",
 				"content_script.js"
@@ -47,6 +50,7 @@
 		},
 		{
 			"matches": ["https://soundcloud.com/*"],
+			"all_frames": true,
 			"js": [
 				"soundcloud.js",
 				"content_script.js"
@@ -55,6 +59,7 @@
 		},
 		{
 			"matches": ["https://app.plex.tv/desktop"],
+			"all_frames": true,
 			"js": [
 				"plex.js",
 				"content_script.js"
