@@ -6,7 +6,7 @@
 	"icons": {
 		"128": "icon.png"
 	},
-	"version": "2.8",
+	"version": "2.8.1",
 	"author": "Sainan",
 	"minimum_chrome_version": "41",
 	"permissions": [
