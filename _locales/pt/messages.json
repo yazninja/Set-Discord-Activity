@@ -33,13 +33,13 @@
 		"message": "Defina \"Jogando\", \"Transmissão\", \"Ouvindo\" & \"Assistindo\" em Discord para o que você quiser."
 	},
 	"appName": {
-		"message": "Set Discord Activity"
+		"message": "Definir atividade de Discord"
 	},
 	"hintTwitchOnly": {
 		"message": "O link da transmissão deve começar com https://twitch.tv/"
 	},
 	"loading": {
-		"message": "Set Discord Activity está carregando..."
+		"message": "Set Discord Activity está carregando, por favor aguarde..."
 	},
 	"noTabHelp1": {
 		"message": "Se uma guia já estiver aberta, recarregue-a. Se não, simplesmente "
