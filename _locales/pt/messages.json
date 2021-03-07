@@ -27,13 +27,13 @@
 		"message": "Status Personalizado"
 	},
 	"activityUpdate": {
-		"message": "Set Discord Activity"
+		"message": "Definir atividade de Discord"
 	},
 	"appDesc": {
 		"message": "Defina \"Jogando\", \"Transmissão\", \"Ouvindo\" & \"Assistindo\" em Discord para o que você quiser."
 	},
 	"appName": {
-		"message": "Definir atividade de Discord"
+		"message": "Set Discord Activity — Definir atividade de Discord"
 	},
 	"hintTwitchOnly": {
 		"message": "O link da transmissão deve começar com https://twitch.tv/"
