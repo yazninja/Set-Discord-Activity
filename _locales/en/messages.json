@@ -23,6 +23,9 @@
 	"activityTypeWatching": {
 		"message": "Watching"
 	},
+	"activityTypeCompetingIn": {
+		"message": "Competing in"
+	},
 	"activityTypeCustomStatus": {
 		"message": "Custom Status"
 	},
