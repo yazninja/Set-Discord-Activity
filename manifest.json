@@ -58,7 +58,10 @@
 			"run_at": "document_idle"
 		},
 		{
-			"matches": ["https://app.plex.tv/desktop"],
+			"matches": [
+				"https://app.plex.tv/desktop",
+				"https://app.plex.tv/desktop/*"
+			],
 			"all_frames": true,
 			"js": [
 				"plex.js",
