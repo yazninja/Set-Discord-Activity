@@ -1,15 +1,15 @@
 {
 	"activityDetails": {
-		"message": "Opcional: detalhes (por exemplo, 5v5 Deathmatch)"
+		"message": "Detalhes (por exemplo, 5v5 Deathmatch) (Opcional)"
 	},
 	"activitySource": {
 		"message": "on %"
 	},
 	"activityState": {
-		"message": "Opcional: estado (por exemplo, no jogo)"
+		"message": "Estado (por exemplo, no jogo) (Opcional)"
 	},
 	"activityStreamURL": {
-		"message": "Link da sua Stream"
+		"message": "Link de sua transmissão Ao Vivo"
 	},
 	"activityTypeListening": {
 		"message": "Ouvindo"
@@ -18,7 +18,7 @@
 		"message": "Jogando"
 	},
 	"activityTypeStreaming": {
-		"message": "Transmissão"
+		"message": "Transmitindo"
 	},
 	"activityTypeWatching": {
 		"message": "Assistindo"
@@ -27,16 +27,16 @@
 		"message": "Status Personalizado"
 	},
 	"activityUpdate": {
-		"message": "Definir atividade de Discord"
+		"message": "Definir Atividade"
 	},
 	"appDesc": {
-		"message": "Defina \"Jogando\", \"Transmissão\", \"Ouvindo\" & \"Assistindo\" em Discord para o que você quiser."
+		"message": "Defina \"Jogando\", \"Transmissão\", \"Ouvindo\" & \"Assistindo\" no Discord para o que você quiser."
 	},
 	"appName": {
-		"message": "Set Discord Activity — Definir atividade de Discord"
+		"message": "Set Discord Activity — Definir status do Discord"
 	},
 	"hintTwitchOnly": {
-		"message": "O link da transmissão deve começar com https://twitch.tv/"
+		"message": "O link de sua transmissão deverá começar com https://twitch.tv/"
 	},
 	"loading": {
 		"message": "Set Discord Activity está carregando, por favor aguarde..."
@@ -69,9 +69,9 @@
 		"message": "Sua atividade do Discord será o título do vídeo que você está assistindo ou vazia se você não estiver assistindo a um vídeo."
 	},
 	"sourceOff": {
-		"message": "Off"
+		"message": "Desligado"
 	},
 	"sourceCustom": {
-		"message": "Personalizar"
+		"message": "Personalizado"
 	}
 }
